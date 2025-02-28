@@ -19,8 +19,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Grant execute permissions to Gradle
-        run: chmod +x gradlew
+      - name: Install Gradle
+        run: sudo apt-get install gradle -y
+
+      # - name: Grant execute permissions to Gradle
+      #   run: chmod +x gradlew
 
       - name: Run Tests
         run: ./gradlew test
