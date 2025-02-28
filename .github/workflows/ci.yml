@@ -19,8 +19,14 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Install Gradle
-        run: sudo apt-get install gradle -y
+      # - name: Install Gradle
+      #   run: sudo apt-get install gradle -y
+
+      # - name: Run Tests
+      #   run: gradle test
+
+      - name: Grant Execute Permissions to Gradle
+        run: chmod +x gradlew
 
       - name: Run Tests
-        run: gradle test
+        run: ./gradlew test
