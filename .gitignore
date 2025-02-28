@@ -1,0 +1,7 @@
+# *.jar
+.gradle
+
+# Ignore Gradle build output directory
+build
+src/*.jar
+.kotlin/sessions/*

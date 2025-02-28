@@ -1,0 +1,26 @@
+name: Execute Kotlin Tests
+
+on:
+    push:
+      branches:
+        - "**"
+
+jobs:
+  kotlin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Grant Execute Permissions to Gradle
+        run: chmod +x gradlew
+
+      - name: Run Tests
+        run: ./gradlew test
