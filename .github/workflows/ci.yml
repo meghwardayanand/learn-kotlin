@@ -22,9 +22,5 @@ jobs:
       - name: Install Gradle
         run: sudo apt-get install gradle -y
 
-      # - name: Grant execute permissions to Gradle
-      #   run: chmod +x gradlew
-
       - name: Run Tests
         run: gradle test
-        # run: ./gradlew test
